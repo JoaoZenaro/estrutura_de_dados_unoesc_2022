@@ -48,6 +48,8 @@ int main()
 			std::cout << "Estou iniciando divisao \n";
 			divisao();
 			break;
-
+		default:
+			std::cout << "Invalido \n";
+			break;
 	}
 }
