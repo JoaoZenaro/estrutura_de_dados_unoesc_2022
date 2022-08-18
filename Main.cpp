@@ -14,12 +14,12 @@ int main()
 	int opcao;
 	setlocale(LC_ALL, "portuguese");
 
-	std::cout << "Olá, seja bem vindo ao mundo da Estrutura de Dados\n";
+	std::cout << "Ola, seja bem vindo ao mundo da Estrutura de Dados\n";
 	separador();
-	std::cout << "Qual programa você quer executar? \n";
+	std::cout << "Qual programa vocï¿½ quer executar? \n";
 	separador();
 
-	std::string opcoes[4] = { "1 - Soma", "2 - Conversor de Graus", "3 - Fatorial", "4 - Potencia"};
+	std::string opcoes[4] = { "1 - Soma", "2 - Subtracao", "3 - Multiplicacao", "4 - Divisao"};
 
 	separador();
 	for (int i = 0; i < 4; i++) {
@@ -32,6 +32,21 @@ int main()
 			separador();
 			std::cout << "Estou iniciando soma \n";
 			soma();
+			break;
+		case 2:
+			separador();
+			std::cout << "Estou iniciando subtracao \n";
+			subtracao();
+			break;
+		case 3:
+			separador();
+			std::cout << "Estou iniciando multiplicacao \n";
+			multiplicacao();
+			break;
+		case 4:
+			separador();
+			std::cout << "Estou iniciando divisao \n";
+			divisao();
 			break;
 
 	}
