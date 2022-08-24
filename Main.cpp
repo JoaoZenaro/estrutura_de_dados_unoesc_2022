@@ -1,55 +1,81 @@
-#include <locale>
+// #include <locale.h>
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <stdio.h>
-#include "Calculos.h";
+#include "Helper.h"
+
+using namespace std;
 
 void separador()
 {
-	std::cout << "--------------------------------------------------\n";
+    cout << "--------------------------------------------------- \n";
 }
 
 int main()
 {
-	int opcao;
-	setlocale(LC_ALL, "portuguese");
+    int op;
+    float n1,n2;
 
-	std::cout << "Ola, seja bem vindo ao mundo da Estrutura de Dados\n";
-	separador();
-	std::cout << "Qual programa voc� quer executar? \n";
-	separador();
+    // setlocale(LC_ALL, "portuguese");
 
-	std::string opcoes[4] = { "1 - Soma", "2 - Subtracao", "3 - Multiplicacao", "4 - Divisao"};
+    menu();
+    cout << "Digite a operação desejada: ";
+    cin >> op;
 
-	separador();
-	for (int i = 0; i < 4; i++) {
-		std::cout << opcoes[i] << "\n";		
-	}
-	scanf_s("%d", &opcao);
+    switch (op)
+    {
+    case 1:
+        cout << "Digite o 1o numero: ";
+        cin >> n1;
+        cout << "Digite o 2o numero: ";
+        cin >> n2;
+        cout << "Soma: " << soma(n1,n2);
+        break;
+    case 2:
+        cout << "Digite o 1o numero: ";
+        cin >> n1;
+        cout << "Digite o 2o numero: ";
+        cin >> n2;
+        cout << "Subtracao: " << subtracao(n1,n2);
+        break;
+    case 3:
+        cout << "Digite o 1o numero: ";
+        cin >> n1;
+        cout << "Digite o 2o numero: ";
+        cin >> n2;
+        cout << "Multiplicacao: " << multiplicacao(n1,n2);
+        break;
+    case 4:
+        cout << "Digite o 1o numero: ";
+        cin >> n1;
+        cout << "Digite o 2o numero: ";
+        cin >> n2;
+        cout << "Divisao: " << divisao(n1,n2);
+        break;
+    case 5:
+        cout << "Digite o numero em graus celcius: ";
+        cin >> n1;
+        cout << "Fahrenheit: " << conversorGraus(n1);
+        break;
+    case 6:
+        cout << "Digite o numero: ";
+        cin >> n1;
+        cout << "Fatorial: " << fatorial(n1);
+        break;
+    case 7:
+        cout << "Digite o numero: ";
+        cin >> n1;
+        cout << "Digite a potencia: ";
+        cin >> n2;
+        cout << "Potencia: " << potencia(n1, n2);
+        break;
+    
+    default:
+        cout << "Invalido";
+        break;
+    }
 
-	switch (opcao) {
-		case 1:
-			separador();
-			std::cout << "Estou iniciando soma \n";
-			soma();
-			break;
-		case 2:
-			separador();
-			std::cout << "Estou iniciando subtracao \n";
-			subtracao();
-			break;
-		case 3:
-			separador();
-			std::cout << "Estou iniciando multiplicacao \n";
-			multiplicacao();
-			break;
-		case 4:
-			separador();
-			std::cout << "Estou iniciando divisao \n";
-			divisao();
-			break;
-		default:
-			std::cout << "Invalido \n";
-			break;
-	}
+    
+
+    return 0;
 }

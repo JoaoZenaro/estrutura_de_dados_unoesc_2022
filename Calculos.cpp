@@ -1,72 +1,41 @@
-#include <stdio.h>
-#include "Calculos.h"
+#include <cmath>
 
-void soma()
-{
-    int a = 0;
-    int b = 0;
-    int soma = 0;
-
-
-    printf("Digite A \n");
-    scanf_s("%d", &a);
-    printf("Digite B: \n");
-    scanf_s("%d", &b);
-
-    soma = a + b;
-
-    printf("A soma � %d\n", soma);
-    
+float soma(float n1, float n2){
+    return n1+n2;
 }
 
-void subtracao()
-{
-    int a = 0;
-    int b = 0;
-    int sub = 0;
-
-
-    printf("Digite A \n");
-    scanf_s("%d", &a);
-    printf("Digite B: \n");
-    scanf_s("%d", &b);
-
-    sub = a - b;
-
-    printf("A subtracao eh %d\n", sub);
+float subtracao(float n1, float n2){
+    return n1-n2;
 }
 
-void multiplicacao()
-{
-    int a = 0;
-    int b = 0;
-    int res = 0;
-
-
-    printf("Digite A \n");
-    scanf_s("%d", &a);
-    printf("Digite B: \n");
-    scanf_s("%d", &b);
-
-    res = a * b;
-
-    printf("A multiplicacao eh %d\n", res);
+float multiplicacao(float n1, float n2){
+    return n1*n2;
 }
 
+float divisao(float n1, float n2){
+    return n1/n2;
+}
 
-void divisao()
-{
-    int a = 0;
-    int b = 0;
-    int res = 0;
+float conversorGraus(float n1){
+    return n1 * 1.8 + 32;
+}
 
+float fatorial(float n1){
+    float res = 1;
+    for (int i = n1; i > 1; i--)
+    {
+        res *= i;
+    }
+    return res;
+}
 
-    printf("Digite A \n");
-    scanf_s("%d", &a);
-    printf("Digite B: \n");
-    scanf_s("%d", &b);
+float potencia(float n1, float n2){
+    float temp = n1;
 
-    res = a / b;
+    for (int i = 0; i < (n2-1); i++)
+    {
+        n1 *= temp;
+    }
 
-    printf("A divisao eh %d\n", res);
+    return n1;
 }
